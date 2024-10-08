@@ -11,12 +11,15 @@ public class AtkinAlgorthem extends PrimeStrategyFinder {
     int start;
     int end;
     int threadCount;
-
+    public boolean[] isPrime ;
+    public AtkinAlgorthemExecutor atkinAlgorthemExecutor;
     public AtkinAlgorthem(int start, int end, int threadCount) {
         this.start = start;
         this.end = end;
         this.threadCount = threadCount;
         this.executor = Executors.newFixedThreadPool(threadCount);
+        this.isPrime = new boolean[this.end + 1];
+        atkinAlgorthemExecutor=new AtkinAlgorthemExecutor(start,end);
     }
 
 
@@ -30,12 +33,17 @@ public class AtkinAlgorthem extends PrimeStrategyFinder {
             // divid the interval for the i worker
             int rangeStart = start + i * threadInterval;
             int rangeEnd = (i == threadCount - 1) ? end : rangeStart + threadInterval - 1;
-            executor.submit(new AtkinAlgorthemExecutor(rangeStart , rangeEnd));
+
+            executor.submit(new AtkinAlgorthemExecutor(rangeStart,rangeEnd));
+
         }
 
 
     }
 
     public List<Integer> getPrimes() {
-        return null;    }
+        List<Integer> primes = new ArrayList<>();
+        atkinAlgorthemExecutor.run();
+        return atkinAlgorthemExecutor.primes;
+    }
 }

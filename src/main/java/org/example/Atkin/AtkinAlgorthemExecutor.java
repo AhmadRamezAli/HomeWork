@@ -4,19 +4,21 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class AtkinAlgorthemExecutor implements Runnable {
+public class AtkinAlgorthemExecutor  implements Runnable {
 
-    private int start;
-    private int end;
-
+    public int start;
+    public int end;
+    public boolean[] isPrime;
+    public List<Integer> primes = new ArrayList<>();
     public AtkinAlgorthemExecutor(int start, int end) {
         this.start = start;
         this.end = end;
+        this.isPrime = new boolean[this.end + 1];
     }
 
     @Override
     public void run() {
-        boolean[] isPrime = new boolean[this.end + 1];
+
         Arrays.fill(isPrime, false);
 
         // Sieve of Atkin Algorithm
@@ -47,7 +49,6 @@ public class AtkinAlgorthemExecutor implements Runnable {
         }
 
         // Collect primes from the range
-        List<Integer> primes = new ArrayList<>();
         if (start <= 2 && this.end >= 2) primes.add(2);
         if (start <= 3 && this.end >= 3) primes.add(3);
 

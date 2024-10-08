@@ -12,8 +12,9 @@ public class Main {
 
 
             // Run the algorithm
-            AtkinAlgorthem sieve = new AtkinAlgorthem(5, 1000,12);
+            AtkinAlgorthem sieve = new AtkinAlgorthem(14,16,3);
             sieve.run();
+        System.out.println(sieve.getPrimes());
 
         // End time measurement
         long endTime = System.currentTimeMillis();

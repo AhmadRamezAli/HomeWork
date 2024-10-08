@@ -21,7 +21,7 @@ public class EratosthenesAlgorthem extends PrimeStrategyFinder
     this.end=end;
         // Initialize the BitSet where true represents a prime candidate
         primeCandidates = new BitSet(end + 1);
-        primeCandidates.set(start, end + 1); // Mark all numbers as prime candidates starting from 2
+        primeCandidates.set(2, end + 1); // Mark all numbers as prime candidates starting from 2
         this.executor = Executors.newFixedThreadPool(threadCount); // Create a fixed thread pool
     }
 
@@ -43,8 +43,10 @@ public class EratosthenesAlgorthem extends PrimeStrategyFinder
 
     public List<Integer> getPrimes() {
         List<Integer> primes = new ArrayList<>();
+
         for (int i = start; i <= end; i++) {
             if (primeCandidates.get(i)) {
+
                 primes.add(i);
             }
         }
