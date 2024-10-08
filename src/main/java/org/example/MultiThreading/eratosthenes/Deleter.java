@@ -1,4 +1,4 @@
-package org.example.eratosthenes;
+package org.example.MultiThreading.eratosthenes;
 
 import java.util.ArrayList;
 import java.util.BitSet;

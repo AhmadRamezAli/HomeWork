@@ -1,9 +1,8 @@
-package org.example.Atkin;
+package org.example.MultiThreading.Atkin;
 
-import org.example.Abstraction.PrimeStrategyFinder;
+import org.example.MultiThreading.Abstraction.PrimeStrategyFinder;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.Executors;
 

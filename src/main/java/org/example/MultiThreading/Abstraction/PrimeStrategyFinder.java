@@ -1,4 +1,4 @@
-package org.example.Abstraction;
+package org.example.MultiThreading.Abstraction;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;

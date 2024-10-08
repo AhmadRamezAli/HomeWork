@@ -1,12 +1,10 @@
-package org.example.eratosthenes;
+package org.example.MultiThreading.eratosthenes;
 
-import org.example.Abstraction.PrimeStrategyFinder;
+import org.example.MultiThreading.Abstraction.PrimeStrategyFinder;
 
 import java.util.ArrayList;
 import java.util.BitSet;
 import java.util.List;
-import java.util.concurrent.Executor;
-import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 

@@ -1,4 +1,4 @@
-package org.example.Atkin;
+package org.example.MultiThreading.Atkin;
 
 import java.util.ArrayList;
 import java.util.Arrays;
